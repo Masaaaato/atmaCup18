@@ -5,17 +5,17 @@
 ## Overview
 1. NN1
    CNN backboneに走行時特徴量を結合してMLP
-   ![NN1](https://github.com/user-attachments/assets/2f2b4364-e537-4d8e-9018-050264f22d85)
+   <img src="https://github.com/user-attachments/assets/2f2b4364-e537-4d8e-9018-050264f22d85" alt="NN1" width="200">
 
-2. NN2
+3. NN2
    CNN backboneに走行時特徴量を結合した後，同一sceneについてLSTM
-   ![NN2](https://github.com/user-attachments/assets/889ca448-caf4-4720-a7d8-2a0773d7a5f3)
+   <img src="https://github.com/user-attachments/assets/889ca448-caf4-4720-a7d8-2a0773d7a5f3" alt="NN1" width="200">
 
-3. image embedding ([RSUD20K-DETR](https://github.com/hasibzunair/RSUD20K)のbackbone出力)
+5. image embedding ([RSUD20K-DETR](https://github.com/hasibzunair/RSUD20K)のbackbone出力)
    車載カメラ画像で学習済みのDETRモデルのbacbone CNN出力を種得. 3frames間の類似度も計算
-4. GBDT
+6. GBDT
    NN1/NN2のOOF, image embeddingのSVDとframe間相関, 走行時特徴量のscene間統計量やshiftやdiff.
-5. blending
+7. blending
    同一scene枚数に応じて、1~2, 3~6枚を分けてそれぞれでNelder-mead
 
  ## Examples
@@ -40,13 +40,15 @@
    ```
 
 3. image embedding
-   `[RSUD20K_DETR_embs.ipynb(https://github.com/Masaaaato/atmaCup18/blob/main/run/RSUD20K_DETR_embs.ipynb)]`を参照して下さい
+`[RSUD20K_DETR_embs.ipynb](https://github.com/Masaaaato/atmaCup18/blob/main/run/RSUD20K_DETR_embs.ipynb)`
+を参照して下さい
 
-4. GBDT
-   `[XGB_convnext_oof.ipynb](https://github.com/Masaaaato/atmaCup18/blob/main/run/XGB_convnext_oof.ipynb)`を参照して下さい
+5. GBDT
+`[XGB_convnext_oof.ipynb](https://github.com/Masaaaato/atmaCup18/blob/main/run/XGB_convnext_oof.ipynb)`
+を参照して下さい
 
-5. blending
-   ```python
+7. blending
+```python
 import pandas as pd
 from scipy.optimize import minimize
 
@@ -114,5 +116,5 @@ for num_scenes in [[1, 2], [3, 4, 5, 6]]:
 
     test_preds = sum(w * p for w, p in zip(optimal_weights, test_predictions))  
     test_blended[test_ind] = test_preds
-   ```
+```
    
