@@ -16,7 +16,7 @@
 6. GBDT  
    NN1/NN2のOOF, image embeddingのSVDとframe間相関, 走行時特徴量のscene間統計量やshiftやdiff.
 7. blending  
-   同一scene枚数に応じて、1~2, 3~6枚を分けてそれぞれでNelder-mead
+   同一scene枚数に応じて、1-2, 3-6枚を分けてそれぞれでNelder-mead
 
  ## Examples
  1. NN1
