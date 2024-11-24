@@ -12,7 +12,7 @@
    <img src="https://github.com/user-attachments/assets/889ca448-caf4-4720-a7d8-2a0773d7a5f3" alt="NN1" width="300">
 
 5. image embedding ([RSUD20K-DETR](https://github.com/hasibzunair/RSUD20K)のbackbone出力)  
-   車載カメラ画像で学習済みのDETRモデルのbacbone CNN出力を種得. 3frames間の類似度も計算
+   車載カメラ画像で学習済みのDETRモデルのbacbone CNN出力を取得. 3frames間の類似度も計算
 6. GBDT  
    NN1/NN2のOOF, image embeddingのSVDとframe間相関, 走行時特徴量のscene間統計量やshiftやdiff.
 7. blending  
@@ -71,10 +71,7 @@ for num_scenes in [[1, 2], [3, 4, 5, 6]]:
     predictions = [oof1.iloc[ind].values,
                     oof2.iloc[ind].values,
                     oof3.iloc[ind].values,
-                    oof4.iloc[ind].values,
-                    oof5.iloc[ind].values,
-                    oof6.iloc[ind].values,
-                    oof7.iloc[ind].values]
+                    oof4.iloc[ind].values]
     # initialize
     initial_weights = np.ones(len(predictions)) / len(predictions)
 
@@ -109,10 +106,7 @@ for num_scenes in [[1, 2], [3, 4, 5, 6]]:
     test_predictions = [test1.iloc[test_ind].values,
                         test2.iloc[test_ind].values,
                         test3.iloc[test_ind].values,
-                        test4.iloc[test_ind].values,
-                        test5.iloc[test_ind].values,
-                        test6.iloc[test_ind].values,
-                        test7.iloc[test_ind].values]
+                        test4.iloc[test_ind].values]
 
     test_preds = sum(w * p for w, p in zip(optimal_weights, test_predictions))  
     test_blended[test_ind] = test_preds
