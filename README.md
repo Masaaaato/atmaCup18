@@ -4,11 +4,11 @@
 
 ## Overview
 1. NN1
-   CNN backboneに走行時特徴量を結合してMLP
+   CNN backboneに走行時特徴量を結合してMLP  
    <img src="https://github.com/user-attachments/assets/2f2b4364-e537-4d8e-9018-050264f22d85" alt="NN1" width="200">
 
 3. NN2
-   CNN backboneに走行時特徴量を結合した後，同一sceneについてLSTM
+   CNN backboneに走行時特徴量を結合した後，同一sceneについてLSTM  
    <img src="https://github.com/user-attachments/assets/889ca448-caf4-4720-a7d8-2a0773d7a5f3" alt="NN1" width="200">
 
 5. image embedding ([RSUD20K-DETR](https://github.com/hasibzunair/RSUD20K)のbackbone出力)
@@ -39,11 +39,11 @@
     python -u run/cnn_lstm_w_driving_features_inference  
    ```
 
-3. image embedding
+3. image embedding  
 `[RSUD20K_DETR_embs.ipynb](https://github.com/Masaaaato/atmaCup18/blob/main/run/RSUD20K_DETR_embs.ipynb)`
 を参照して下さい
 
-5. GBDT
+5. GBDT  
 `[XGB_convnext_oof.ipynb](https://github.com/Masaaaato/atmaCup18/blob/main/run/XGB_convnext_oof.ipynb)`
 を参照して下さい
 
