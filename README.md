@@ -11,11 +11,11 @@
    CNN backboneに走行時特徴量を結合した後，同一sceneについてLSTM  
    <img src="https://github.com/user-attachments/assets/889ca448-caf4-4720-a7d8-2a0773d7a5f3" alt="NN1" width="300">
 
-5. image embedding ([RSUD20K-DETR](https://github.com/hasibzunair/RSUD20K)のbackbone出力)
+5. image embedding ([RSUD20K-DETR](https://github.com/hasibzunair/RSUD20K)のbackbone出力)  
    車載カメラ画像で学習済みのDETRモデルのbacbone CNN出力を種得. 3frames間の類似度も計算
-6. GBDT
+6. GBDT  
    NN1/NN2のOOF, image embeddingのSVDとframe間相関, 走行時特徴量のscene間統計量やshiftやdiff.
-7. blending
+7. blending  
    同一scene枚数に応じて、1~2, 3~6枚を分けてそれぞれでNelder-mead
 
  ## Examples
