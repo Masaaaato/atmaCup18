@@ -1,6 +1,6 @@
 # atmaCup18
 これは[#18 Turing × atmaCup](https://www.guruguru.science/competitions/25)に関連するコードレポジトリです.  
-菜後のblendingで発生させたバグのせいで間に合わず，直後のlate subでpublic 0.1965, private 0.1834 (10位相当)です.  
+最後のblendingで発生させたバグのせいで間に合わず，直後のlate subでpublic 0.1965, private 0.1834 (10位相当)です.  
 
 ## Overview
 1. NN1
